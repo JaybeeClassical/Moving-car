@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html> 
+ <head>
+    <title>New Animation</title> 
+</head>
+ <body>
+    <p align="center"> 
+	<!--This draws the Canvas on the webpage -->
+      <canvas id="mycanvas"></canvas> 
+    </p>
+ </body>
+
+ 
+ <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+
+ <script>
+   var sketchProc = function(processingInstance) {
+    with (processingInstance) {
+       size(400, 400); 
+       frameRate(30);
+       
+       
+       noStroke();
+
+
+var x = 10;
+    
+draw = function() {
+    
+    // all lines of code inside here will be run repeatedly
+    background(022, 220, 011);
+    
+    
+    // draw the car body
+    fill(255, 255, 255);
+    rect(x, 200, 100, 20);
+    rect(x + 5, 178, 70, 40);
+
+    // draw the windows 
+    fill(28, 36, 76);
+    rect(x + 20, 184, 16, 14);
+    rect(x + 50, 184, 16, 14);
+
+    
+    // draw the wheels
+    fill(77, 66, 66);
+    ellipse(x + 25, 221, 24, 24);
+    ellipse(x + 75, 221, 24, 24);
+    rect(0, 230, 400,500);
+
+    fill(225, 225, 225);
+    ellipse(x + 25, 221, 19, 19);
+    ellipse(x + 75, 221, 19, 19);
+
+
+    
+    
+    x = x + 1;
+};
+   }};
+
+   // Get the canvas that Processing-js will use
+   var canvas = document.getElementById("mycanvas"); 
+   // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+   var processingInstance = new Processing(canvas, sketchProc); 
+</script>
+
+</html>
